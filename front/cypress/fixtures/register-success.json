@@ -1,0 +1,10 @@
+{
+  "id": 2,
+  "firstName": "New",
+  "lastName": "User",
+  "email": "newuser@example.com",
+  "admin": false,
+  "token": "mock-jwt-token-67890",
+  "type": "Bearer",
+  "username": "newuser@example.com"
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Session Yoga Débutant",
+    "description": "Session d'initiation au yoga pour débutants",
+    "date": "2024-01-15T10:00:00.000Z",
+    "teacher_id": 1,
+    "users": [1, 2, 3],
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "name": "Session Yoga Avancé",
+    "description": "Session de yoga pour pratiquants avancés",
+    "date": "2024-01-20T14:00:00.000Z",
+    "teacher_id": 2,
+    "users": [4, 5],
+    "createdAt": "2024-01-02T00:00:00.000Z",
+    "updatedAt": "2024-01-02T00:00:00.000Z"
+  },
+  {
+    "id": 3,
+    "name": "Session Méditation",
+    "description": "Session de méditation guidée",
+    "date": "2024-01-25T18:00:00.000Z",
+    "teacher_id": 1,
+    "users": [],
+    "createdAt": "2024-01-03T00:00:00.000Z",
+    "updatedAt": "2024-01-03T00:00:00.000Z"
+  }
+]

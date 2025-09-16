@@ -32,22 +32,29 @@ Le projet inclut une stratégie complète de **tests automatisés** : unitaires,
 
 ## 🚀 Installation et lancement de l’application
 Back-end (Spring Boot)
-
+ ```bash
 cd back
+ ```bash
 mvn clean install
+ ```bash
 mvn spring-boot:run
 
 
 Par défaut, l’API démarre sur :
+ ```bash
 👉 http://localhost:8080
 
 Front-end (Angular)
+ ```bash
 cd front
+ ```bash
 npm install
+ ```bash
 ng serve
 
 
 Par défaut, l’application front démarre sur :
+ ```bash
 👉 http://localhost:4200
 
 Identifiants de test
@@ -60,7 +67,9 @@ mot de passe : test!1234
 
 ## 🧪 Lancer les tests et générer les rapports de couverture
 Front-end (unitaires + intégration)
+ ```bash
 cd front
+ ```bash
 npm run test
 
 
@@ -71,19 +80,22 @@ front/coverage/index.html
 End-to-End (Cypress)
 
 Mode interactif (recommandé pour naviguer dans les specs) :
-
+ ```bash
 cd front
+ ```bash
 npx cypress open
 
 
 👉 Choisir E2E Testing → Chrome → sélectionner la spec à exécuter.
 
 Mode headless (CI/CD) :
-
+ ```bash
 npx cypress run --browser chrome
 
 Back-end (unitaires + intégration)
+ ```bash
 cd back
+ ```bash
 mvn clean verify
 
 

@@ -1,114 +1,91 @@
-# 🧘 Yoga App — Projet Fullstack (OpenClassrooms)
+# 🧘 Yoga App — Application Fullstack
 
-## 📌 Description
-Yoga App est une application **fullstack** développée avec **Angular** (front-end), **Spring Boot** (back-end) et **MySQL** (base de données).
-
-Fonctionnalités principales :
-- Authentification (connexion / inscription).
-- Gestion des utilisateurs et des sessions de yoga.
-- Ajout, modification, suppression de sessions (admin).
-- Participation à une session (utilisateur).
-
-Le projet inclut une stratégie complète de **tests automatisés** : unitaires, intégration et end-to-end.
+## 🎯 Présentation
+Yoga App est une application web fullstack (Angular + Spring Boot + MySQL), pensée pour gérer des sessions de yoga avec des rôles utilisateurs / administrateurs.  
+Elle permet :  
+- S'inscrire / se connecter  
+- Pour un administrateur : créer, modifier, supprimer des sessions  
+- Pour un utilisateur : consulter les sessions, participer à une session
 
 ---
 
 ## ⚙️ Prérequis
-- **Java 11** (OpenJDK ou équivalent)
-- **Maven 3.9+**
-- **Node.js 16** + **npm**
-- **Angular CLI 14**
-- **MySQL 8+** (port par défaut : `3306`)
-- **Cypress** (installé via npm pour les tests E2E)
+- Java 11  
+- Maven 3.9+  
+- Node.js 16 + npm  
+- Angular CLI 14  
+- MySQL 8+ (port 3306)  
 
 ---
 
 ## 🗄️ Installation de la base de données
-1. Créez une base MySQL nommée `yoga`.
-2. Importez le script SQL :
-   ```bash
-   mysql -u root -p yoga < ressources/sql/script.sql
-3. Vérifiez que l’utilisateur et les tables sont correctement créés.
+```bash
+mysql -u root -p
+CREATE DATABASE yoga CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+exit
+mysql -u root -p yoga < ressources/sql/script.sql
+```
 
-## 🚀 Installation et lancement de l’application
-Back-end (Spring Boot)
- ```bash
+---
+
+## 🚀 Installation & lancement
+
+### Back-end
+```bash
 cd back
- ```bash
 mvn clean install
- ```bash
 mvn spring-boot:run
+```
+API accessible sur : `http://localhost:8080`
 
-
-Par défaut, l’API démarre sur :
- ```bash
-👉 http://localhost:8080
-
-Front-end (Angular)
- ```bash
+### Front-end
+```bash
 cd front
- ```bash
 npm install
- ```bash
 ng serve
+```
+Front accessible sur : `http://localhost:4200`
 
+---
 
-Par défaut, l’application front démarre sur :
- ```bash
-👉 http://localhost:4200
+## 🔐 Identifiants de test
+- **Admin** :  
+  - email : `yoga@studio.com`  
+  - mot de passe : `test!1234`
 
-Identifiants de test
+---
 
-Admin :
+## 🧪 Tests & couverture
 
-login : yoga@studio.com
-
-mot de passe : test!1234
-
-## 🧪 Lancer les tests et générer les rapports de couverture
-Front-end (unitaires + intégration)
- ```bash
-cd front
- ```bash
-npm run test
-
-
-Rapport de couverture généré dans :
-
-front/coverage/index.html
-
-End-to-End (Cypress)
-
-Mode interactif (recommandé pour naviguer dans les specs) :
- ```bash
-cd front
- ```bash
-npx cypress open
-
-
-👉 Choisir E2E Testing → Chrome → sélectionner la spec à exécuter.
-
-Mode headless (CI/CD) :
- ```bash
-npx cypress run --browser chrome
-
-Back-end (unitaires + intégration)
- ```bash
+### Tests unitaires / intégration backend
+```bash
 cd back
- ```bash
 mvn clean verify
+```
+Rapport : `back/target/site/jacoco/index.html`
+
+### Tests front-end et Jest
+```bash
+cd front
+npm run test
+```
+Rapport : `front/coverage/index.html`
+
+### Tests end-to-end (Cypress)
+```bash
+cd front
+npx cypress open          # pour naviguer dans les specs via interface
+npx cypress run --browser chrome
+```
+
+---
+
+## 📷 Captures des rapports de couverture
+Les captures sont dans `docs/screenshots/` :  
+- Back-end (JaCoCo) → `docs/screenshots/coverage-back.png`  
+- Front‑end (Jest) → `docs/screenshots/coverage-front.png`  
+- End‑to‑End (Cypress) → `docs/screenshots/coverage-e2e.png`
 
 
-Rapport JaCoCo généré dans :
 
-back/target/site/jacoco/index.html
 
-## 📷 Captures d’écran des rapports
-
-Les rapports de couverture sont disponibles dans docs/screenshots/ :
-
-Back-end (JaCoCo)
-
-Front-end (Jest)
-
-End-to-End (Cypress)
